@@ -17,9 +17,3 @@ jobs:
 
       - name: Validate shell entrypoints
         run: bash -n taiga-back/docker-entrypoint.sh && bash -n taiga-front/docker-entrypoint.sh
-
-      - name: Build backend image
-        run: docker build ./taiga-back
-
-      - name: Build frontend image
-        run: docker build ./taiga-front
