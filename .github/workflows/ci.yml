@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate shell entrypoints
-        run: sh -n taiga-back/docker-entrypoint.sh && sh -n taiga-front/docker-entrypoint.sh
+        run: bash -n taiga-back/docker-entrypoint.sh && bash -n taiga-front/docker-entrypoint.sh
 
       - name: Build backend image
         run: docker build ./taiga-back
