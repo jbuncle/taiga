@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.9-bullseye
 
 RUN apt-get update && apt-get install -y \
     build-essential binutils-doc autoconf flex bison libjpeg-dev \
