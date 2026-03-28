@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate shell entrypoints
+        run: sh -n taiga-back/docker-entrypoint.sh && sh -n taiga-front/docker-entrypoint.sh
+
+      - name: Build backend image
+        run: docker build ./taiga-back
+
+      - name: Build frontend image
+        run: docker build ./taiga-front
