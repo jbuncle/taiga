@@ -1,7 +1,7 @@
-FROM ubuntu:xenial
+FROM ubuntu:22.04
 
 RUN apt-get update \
-    && apt-get install -y nginx git \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y nginx git \
     && rm -rf /var/lib/apt/lists/*
 
 
